@@ -12,4 +12,5 @@ Funcionalidades:
 	<li>Cliente realizar pagamento através do app</li>
   <ol>
 	  <br>
+	  
   ![AcademiaApp](https://user-images.githubusercontent.com/43687500/182194701-4addbef1-d653-431f-871a-df32f85b1340.png)
