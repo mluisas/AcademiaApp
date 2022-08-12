@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Getter
 @Setter
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 public class Instrutor {
     @EmbeddedId
     InfoPessoal infoPessoal;
+    @OneToOne
     InfoPagamento infoPagamento;
 
 }

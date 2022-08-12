@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.Set;
 @Getter
 @Setter
@@ -13,8 +15,11 @@ import java.util.Set;
 @Entity
 public class Treino {
     @Id
-    Integer id;
-    Set<Exercicio> exercicios;
-    Cliente cliente;
-    Instrutor instrutor;
+    private Integer id;
+    @OneToMany
+    private Set<Exercicio> exercicios;
+    @OneToOne
+    private Cliente cliente;
+    @OneToOne
+    private Instrutor instrutor;
 }

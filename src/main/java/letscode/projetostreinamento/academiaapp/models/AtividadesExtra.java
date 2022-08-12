@@ -18,7 +18,7 @@ import java.time.LocalTime;
 public class AtividadesExtra {
     @Id
     private Integer id;
-    String nome;
-    DayOfWeek diaDaSemana;
-    LocalTime horario;
+    private String nome;
+    private DayOfWeek diaDaSemana;
+    private LocalTime horario;
 }

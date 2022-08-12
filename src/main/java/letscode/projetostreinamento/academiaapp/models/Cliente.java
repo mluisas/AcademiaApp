@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.time.MonthDay;
 import java.util.HashMap;
@@ -23,8 +25,11 @@ public class Cliente {
     private Double peso;
     private HashMap<LocalDate, Double> medicoesImc;
     private MonthDay dataPagamento;
+    @OneToOne
     private InfoPagamento infoPagamento;
+    @OneToMany
     private List<Treino> treinos;
+    @OneToMany
     private List<AtividadesExtra> atividades;
 
 
