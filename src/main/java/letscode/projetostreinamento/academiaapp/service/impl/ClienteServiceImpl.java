@@ -1,6 +1,7 @@
 package letscode.projetostreinamento.academiaapp.service;
 
 import letscode.projetostreinamento.academiaapp.models.Cliente;
+import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
 import letscode.projetostreinamento.academiaapp.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,8 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public Cliente getCliente(Integer id) {
-        return clienteRepository.findById(id).orElseThrow(RuntimeException::new);
+    public Cliente getCliente(InfoPessoal infoPessoal) {
+        return clienteRepository.findById(infoPessoal).orElseThrow(RuntimeException::new);
     }
 
     @Override
