@@ -1,14 +1,12 @@
 package letscode.projetostreinamento.academiaapp.service;
 
 import letscode.projetostreinamento.academiaapp.models.Cliente;
+import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
 
 import java.util.List;
 
-interface ClienteService {
-    Cliente getCliente(Integer id);
+public interface ClienteService {
+    Cliente getCliente(InfoPessoal infoPessoal);
     List<Cliente> listAllClientes();
-
     void addCliente(Cliente cliente);
-
-
 }
