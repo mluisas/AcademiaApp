@@ -16,17 +16,17 @@ public class ClienteController {
     }
 
     @GetMapping
-    String teste(){
+    public String teste(){
         return "teste";
     }
 
     @PostMapping
-    void addCliente(@RequestBody Cliente cliente){
+    public void addCliente(@RequestBody Cliente cliente){
         clienteService.addCliente(cliente);
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<Cliente> getCliente(@PathVariable InfoPessoal infoPessoal){
+    public ResponseEntity<Cliente> getCliente(@PathVariable InfoPessoal infoPessoal){
         return ResponseEntity.ok(clienteService.getCliente(infoPessoal));
     }
 }
