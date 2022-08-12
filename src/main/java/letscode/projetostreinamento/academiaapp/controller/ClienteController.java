@@ -1,7 +1,8 @@
 package letscode.projetostreinamento.academiaapp.controller;
 
 import letscode.projetostreinamento.academiaapp.models.Cliente;
-import letscode.projetostreinamento.academiaapp.service.ClienteServiceImpl;
+import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
+import letscode.projetostreinamento.academiaapp.service.impl.ClienteServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<Cliente> getCliente(@PathVariable Integer id){
-        return ResponseEntity.ok(clienteService.getCliente(id));
+    ResponseEntity<Cliente> getCliente(@PathVariable InfoPessoal infoPessoal){
+        return ResponseEntity.ok(clienteService.getCliente(infoPessoal));
     }
 }
