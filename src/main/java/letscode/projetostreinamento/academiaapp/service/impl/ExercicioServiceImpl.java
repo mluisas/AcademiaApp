@@ -14,24 +14,23 @@ public class ExercicioServiceImpl implements ExercicioService {
         this.exercicioRepository = exercicioRepository;
     }
 
-    //TO-DO: IMPLEMENTAR CLASSE
     @Override
     public Exercicio getExercicio(Integer id) {
-        return null;
+        return this.exercicioRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
     @Override
     public List<Exercicio> listAllExercicio() {
-        return null;
+        return this.exercicioRepository.findAll();
     }
 
     @Override
     public void addExercicio(Exercicio exercicio) {
-
+        this.exercicioRepository.save(exercicio);
     }
 
     @Override
     public void delete(Integer id) {
-
+        this.exercicioRepository.deleteById(id);
     }
 }

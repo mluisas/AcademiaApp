@@ -14,24 +14,23 @@ public class InfoPagamentoServiceImpl implements InfoPagamentoService {
         this.infoPagamentoRepository = infoPagamentoRepository;
     }
 
-    //TO-DO: IMPLEMENTAR CLASSE
     @Override
     public InfoPagamento getInfoPagamento(Integer id) {
-        return null;
+        return this.infoPagamentoRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
     @Override
     public List<InfoPagamento> listAllInfoPagamento() {
-        return null;
+        return this.infoPagamentoRepository.findAll();
     }
 
     @Override
     public void addInfoPagamento(InfoPagamento infoPagamento) {
-
+        this.infoPagamentoRepository.save(infoPagamento);
     }
 
     @Override
     public void delete(Integer id) {
-
+        this.infoPagamentoRepository.deleteById(id);
     }
 }

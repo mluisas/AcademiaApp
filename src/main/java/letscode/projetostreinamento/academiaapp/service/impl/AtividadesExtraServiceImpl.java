@@ -14,24 +14,23 @@ public class AtividadesExtraServiceImpl implements AtividadesExtraService {
         this.atividadesExtraRepository = atividadesExtraRepository;
     }
 
-    //TO-DO: IMPLEMENTAR CLASSE
     @Override
     public AtividadesExtra getAtividadesExtra(Integer id) {
-        return null;
+        return this.atividadesExtraRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
     @Override
     public List<AtividadesExtra> listAllAtividadesExtra() {
-        return null;
+        return this.atividadesExtraRepository.findAll();
     }
 
     @Override
     public void addAtividadesExtra(AtividadesExtra atividadesExtra) {
-
+        this.atividadesExtraRepository.save(atividadesExtra);
     }
 
     @Override
     public void delete(Integer id) {
-
+        this.atividadesExtraRepository.deleteById(id);
     }
 }
