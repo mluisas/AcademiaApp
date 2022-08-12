@@ -1,6 +1,6 @@
-package service;
+package letscode.projetostreinamento.academiaapp.service;
 
-import models.Cliente;
+import letscode.projetostreinamento.academiaapp.models.Cliente;
 
 import java.util.List;
 

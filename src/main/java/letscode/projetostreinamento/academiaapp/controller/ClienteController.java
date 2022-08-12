@@ -1,11 +1,12 @@
-package controller;
+package letscode.projetostreinamento.academiaapp.controller;
 
-import models.Cliente;
+import letscode.projetostreinamento.academiaapp.models.Cliente;
+import letscode.projetostreinamento.academiaapp.service.ClienteServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-
+@RequestMapping("/cliente")
 public class ClienteController {
     final ClienteServiceImpl clienteService;
 

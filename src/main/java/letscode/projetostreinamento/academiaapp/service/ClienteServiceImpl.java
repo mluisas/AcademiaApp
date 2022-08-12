@@ -1,6 +1,7 @@
-package service;
+package letscode.projetostreinamento.academiaapp.service;
 
-import models.Cliente;
+import letscode.projetostreinamento.academiaapp.models.Cliente;
+import letscode.projetostreinamento.academiaapp.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

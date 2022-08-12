@@ -1,6 +1,6 @@
-package repository;
+package letscode.projetostreinamento.academiaapp.repository;
 
-import models.Cliente;
+import letscode.projetostreinamento.academiaapp.models.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

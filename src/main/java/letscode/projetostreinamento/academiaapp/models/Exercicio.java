@@ -1,18 +1,20 @@
-package models;
+package letscode.projetostreinamento.academiaapp.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
-import java.util.Set;
+import javax.persistence.Id;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @Entity
-public class Treino {
+public class Exercicio {
+    @Id
     Integer id;
-    Set<Exercicio> exercicios;
-    Cliente cliente;
-    Instrutor instrutor;
+    String nome;
+    String urlVideoDemonstracao;
+
 }
