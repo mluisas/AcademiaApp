@@ -2,31 +2,37 @@ package letscode.projetostreinamento.academiaapp.controller;
 
 import letscode.projetostreinamento.academiaapp.models.Cliente;
 import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
-import letscode.projetostreinamento.academiaapp.service.impl.ClienteServiceImpl;
+import letscode.projetostreinamento.academiaapp.service.ClienteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
-    final ClienteServiceImpl clienteService;
+    final ClienteService clienteService;
 
-    public ClienteController(ClienteServiceImpl clienteService) {
+    public ClienteController(ClienteService clienteService) {
         this.clienteService = clienteService;
     }
 
-    @GetMapping
-    public String teste(){
-        return "teste";
-    }
-
     @PostMapping
-    public void addCliente(@RequestBody Cliente cliente){
-        clienteService.addCliente(cliente);
+    public ResponseEntity<Cliente> addCliente(@RequestBody Cliente cliente){
+        return ResponseEntity.ok(clienteService.addCliente(cliente));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> getCliente(@PathVariable InfoPessoal infoPessoal){
         return ResponseEntity.ok(clienteService.getCliente(infoPessoal));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Cliente>> listAllClientes(){
+        return ResponseEntity.ok(clienteService.listAllClientes());
+    }
+    @DeleteMapping
+    public void delete(InfoPessoal infoPessoal){
+        clienteService.delete(infoPessoal);
     }
 }
