@@ -3,9 +3,11 @@ package letscode.projetostreinamento.academiaapp.service.impl;
 import letscode.projetostreinamento.academiaapp.models.Exercicio;
 import letscode.projetostreinamento.academiaapp.repository.ExercicioRepository;
 import letscode.projetostreinamento.academiaapp.service.ExercicioService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ExercicioServiceImpl implements ExercicioService {
 
     final ExercicioRepository exercicioRepository;
@@ -25,8 +27,8 @@ public class ExercicioServiceImpl implements ExercicioService {
     }
 
     @Override
-    public void addExercicio(Exercicio exercicio) {
-        this.exercicioRepository.save(exercicio);
+    public Exercicio addExercicio(Exercicio exercicio) {
+        return this.exercicioRepository.save(exercicio);
     }
 
     @Override

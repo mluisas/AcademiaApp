@@ -8,6 +8,6 @@ import java.util.List;
 public interface InstrutorService {
     Instrutor getInstrutor(InfoPessoal infoPessoal);
     List<Instrutor> listAllInstrutor();
-    void addInstrutor(Instrutor instrutor);
+    Instrutor addInstrutor(Instrutor instrutor);
     void delete(InfoPessoal infoPessoal);
 }

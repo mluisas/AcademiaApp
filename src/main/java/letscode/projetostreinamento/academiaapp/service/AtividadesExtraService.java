@@ -7,6 +7,6 @@ import java.util.List;
 public interface AtividadesExtraService {
     AtividadesExtra getAtividadesExtra(Integer id);
     List<AtividadesExtra> listAllAtividadesExtra();
-    void addAtividadesExtra(AtividadesExtra atividadesExtra);
+    AtividadesExtra addAtividadesExtra(AtividadesExtra atividadesExtra);
     void delete(Integer id);
 }

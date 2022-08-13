@@ -8,5 +8,6 @@ import java.util.List;
 public interface ClienteService {
     Cliente getCliente(InfoPessoal infoPessoal);
     List<Cliente> listAllClientes();
-    void addCliente(Cliente cliente);
+    Cliente addCliente(Cliente cliente);
+    void delete(InfoPessoal infoPessoal);
 }

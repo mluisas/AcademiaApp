@@ -4,9 +4,11 @@ import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
 import letscode.projetostreinamento.academiaapp.models.Instrutor;
 import letscode.projetostreinamento.academiaapp.repository.InstrutorRepository;
 import letscode.projetostreinamento.academiaapp.service.InstrutorService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class InstrutorServiceImpl implements InstrutorService {
 
     final InstrutorRepository instrutorRepository;
@@ -25,8 +27,8 @@ public class InstrutorServiceImpl implements InstrutorService {
     }
 
     @Override
-    public void addInstrutor(Instrutor instrutor) {
-        this.instrutorRepository.save(instrutor);
+    public Instrutor addInstrutor(Instrutor instrutor) {
+        return this.instrutorRepository.save(instrutor);
     }
 
     @Override

@@ -3,9 +3,11 @@ package letscode.projetostreinamento.academiaapp.service.impl;
 import letscode.projetostreinamento.academiaapp.models.InfoPagamento;
 import letscode.projetostreinamento.academiaapp.repository.InfoPagamentoRepository;
 import letscode.projetostreinamento.academiaapp.service.InfoPagamentoService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class InfoPagamentoServiceImpl implements InfoPagamentoService {
 
     final InfoPagamentoRepository infoPagamentoRepository;
@@ -25,8 +27,8 @@ public class InfoPagamentoServiceImpl implements InfoPagamentoService {
     }
 
     @Override
-    public void addInfoPagamento(InfoPagamento infoPagamento) {
-        this.infoPagamentoRepository.save(infoPagamento);
+    public InfoPagamento addInfoPagamento(InfoPagamento infoPagamento) {
+        return this.infoPagamentoRepository.save(infoPagamento);
     }
 
     @Override

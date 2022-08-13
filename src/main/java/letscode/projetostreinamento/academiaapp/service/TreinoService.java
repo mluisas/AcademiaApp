@@ -7,6 +7,6 @@ import java.util.List;
 public interface TreinoService {
     Treino getTreino(Integer id);
     List<Treino> listAllTreino();
-    void addTreino(Treino treino);
+    Treino addTreino(Treino treino);
     void delete(Integer id);
 }

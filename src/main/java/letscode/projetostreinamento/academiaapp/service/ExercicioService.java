@@ -7,6 +7,6 @@ import java.util.List;
 public interface ExercicioService {
     Exercicio getExercicio(Integer id);
     List<Exercicio> listAllExercicio();
-    void addExercicio(Exercicio exercicio);
+    Exercicio addExercicio(Exercicio exercicio);
     void delete(Integer id);
 }

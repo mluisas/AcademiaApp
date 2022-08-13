@@ -3,9 +3,10 @@ package letscode.projetostreinamento.academiaapp.service.impl;
 import letscode.projetostreinamento.academiaapp.models.AtividadesExtra;
 import letscode.projetostreinamento.academiaapp.repository.AtividadesExtraRepository;
 import letscode.projetostreinamento.academiaapp.service.AtividadesExtraService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class AtividadesExtraServiceImpl implements AtividadesExtraService {
 
     final AtividadesExtraRepository atividadesExtraRepository;
@@ -25,8 +26,8 @@ public class AtividadesExtraServiceImpl implements AtividadesExtraService {
     }
 
     @Override
-    public void addAtividadesExtra(AtividadesExtra atividadesExtra) {
-        this.atividadesExtraRepository.save(atividadesExtra);
+    public AtividadesExtra addAtividadesExtra(AtividadesExtra atividadesExtra) {
+        return this.atividadesExtraRepository.save(atividadesExtra);
     }
 
     @Override

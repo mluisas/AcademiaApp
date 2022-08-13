@@ -7,6 +7,6 @@ import java.util.List;
 public interface InfoPagamentoService {
     InfoPagamento getInfoPagamento(Integer id);
     List<InfoPagamento> listAllInfoPagamento();
-    void addInfoPagamento(InfoPagamento infoPagamento);
+    InfoPagamento addInfoPagamento(InfoPagamento infoPagamento);
     void delete(Integer id);
 }
