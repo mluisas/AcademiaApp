@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.MonthDay;
 
 @Getter
@@ -20,9 +21,8 @@ public class InfoPagamento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String numeroCartao;
-    @JsonFormat(pattern = "MM/dd")
-    private MonthDay dataVencimento;
+    private LocalDate dataVencimento;
 
-    @OneToOne
+    @OneToOne(mappedBy = "infoPagamento")
     private Cliente cliente;
 }

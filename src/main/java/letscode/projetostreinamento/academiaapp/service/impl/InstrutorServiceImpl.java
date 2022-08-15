@@ -1,6 +1,5 @@
 package letscode.projetostreinamento.academiaapp.service.impl;
 
-import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
 import letscode.projetostreinamento.academiaapp.models.Instrutor;
 import letscode.projetostreinamento.academiaapp.repository.InstrutorRepository;
 import letscode.projetostreinamento.academiaapp.service.InstrutorService;
@@ -17,8 +16,8 @@ public class InstrutorServiceImpl implements InstrutorService {
         this.instrutorRepository = instrutorRepository;
     }
     @Override
-    public Instrutor getInstrutor(InfoPessoal infoPessoal) {
-        return this.instrutorRepository.findById(infoPessoal).orElseThrow(RuntimeException::new);
+    public Instrutor getInstrutor(String cpf) {
+        return this.instrutorRepository.findById(cpf).orElseThrow(RuntimeException::new);
     }
 
     @Override
@@ -32,7 +31,7 @@ public class InstrutorServiceImpl implements InstrutorService {
     }
 
     @Override
-    public void delete(InfoPessoal infoPessoal) {
-        this.instrutorRepository.deleteById(infoPessoal);
+    public void delete(String cpf) {
+        this.instrutorRepository.deleteById(cpf);
     }
 }

@@ -1,7 +1,6 @@
 package letscode.projetostreinamento.academiaapp.service.impl;
 
 import letscode.projetostreinamento.academiaapp.models.Cliente;
-import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
 import letscode.projetostreinamento.academiaapp.repository.ClienteRepository;
 import letscode.projetostreinamento.academiaapp.service.ClienteService;
 import org.springframework.stereotype.Service;
@@ -17,8 +16,8 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public Cliente getCliente(InfoPessoal infoPessoal) {
-        return clienteRepository.findById(infoPessoal).orElseThrow(RuntimeException::new);
+    public Cliente getCliente(String cpf) {
+        return clienteRepository.findById(cpf).orElseThrow(RuntimeException::new);
     }
 
     @Override
@@ -32,7 +31,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public void delete(InfoPessoal infoPessoal) {
-        clienteRepository.deleteById(infoPessoal);
+    public void delete(String cpf) {
+        clienteRepository.deleteById(cpf);
     }
 }

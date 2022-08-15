@@ -1,16 +1,13 @@
 package letscode.projetostreinamento.academiaapp.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.mapping.PrimaryKey;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.MonthDay;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,16 +16,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Cliente implements Serializable {
-
-    @EmbeddedId
-    private InfoPessoal infoPessoal;
+public class Cliente extends Usuario implements Serializable {
 
     private Double altura;
     private Double peso;
     private HashMap<LocalDate, Double> medicoesImc;
-    @JsonFormat(pattern = "MM/dd")
-    private MonthDay dataPagamento;
+    private Integer diaPagamento;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "info_pagamento_id", referencedColumnName = "id")

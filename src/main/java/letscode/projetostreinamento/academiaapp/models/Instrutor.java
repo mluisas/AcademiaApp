@@ -14,9 +14,7 @@ import javax.persistence.OneToOne;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Instrutor {
-    @EmbeddedId
-    private InfoPessoal infoPessoal;
+public class Instrutor extends Usuario{
     @OneToOne
     private InfoPagamento infoPagamento;
 

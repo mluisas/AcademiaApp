@@ -1,6 +1,5 @@
 package letscode.projetostreinamento.academiaapp.controller;
 
-import letscode.projetostreinamento.academiaapp.models.InfoPessoal;
 import letscode.projetostreinamento.academiaapp.models.Instrutor;
 import letscode.projetostreinamento.academiaapp.service.InstrutorService;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +17,8 @@ public class InstrutorController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Instrutor> getInstrutor(@RequestBody InfoPessoal infoPessoal){
-        return ResponseEntity.ok(instrutorService.getInstrutor(infoPessoal));
+    public ResponseEntity<Instrutor> getInstrutor(@RequestBody String cpf){
+        return ResponseEntity.ok(instrutorService.getInstrutor(cpf));
     }
 
     @GetMapping
@@ -33,7 +32,7 @@ public class InstrutorController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@RequestBody InfoPessoal infoPessoal){
-        instrutorService.delete(infoPessoal);
+    public void delete(@RequestBody String cpf){
+        instrutorService.delete(cpf);
     }
 }
