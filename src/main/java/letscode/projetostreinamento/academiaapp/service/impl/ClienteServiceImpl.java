@@ -3,11 +3,16 @@ package letscode.projetostreinamento.academiaapp.service.impl;
 import letscode.projetostreinamento.academiaapp.models.Cliente;
 import letscode.projetostreinamento.academiaapp.repository.ClienteRepository;
 import letscode.projetostreinamento.academiaapp.service.ClienteService;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@CacheConfig(cacheNames = {"clientes"})
 public class ClienteServiceImpl implements ClienteService {
     final ClienteRepository clienteRepository;
 
@@ -16,6 +21,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
+    @Cacheable
     public Cliente getCliente(String cpf) {
         return clienteRepository.findById(cpf).orElseThrow(RuntimeException::new);
     }
@@ -31,6 +37,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
+    @CacheEvict
     public void delete(String cpf) {
         clienteRepository.deleteById(cpf);
     }
