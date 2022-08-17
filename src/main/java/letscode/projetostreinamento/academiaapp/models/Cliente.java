@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Cliente extends Usuario implements Serializable {
+public class Cliente extends Usuario{
 
     private Double altura;
     private Double peso;
