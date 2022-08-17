@@ -1,5 +1,7 @@
 package letscode.projetostreinamento.academiaapp.controller;
 
+import letscode.projetostreinamento.academiaapp.dto.atividadeExtra.AtividadeExtraRequestDto;
+import letscode.projetostreinamento.academiaapp.dto.atividadeExtra.AtividadeExtraResponseDto;
 import letscode.projetostreinamento.academiaapp.models.AtividadesExtra;
 import letscode.projetostreinamento.academiaapp.service.AtividadesExtraService;
 import org.springframework.http.ResponseEntity;
@@ -18,19 +20,14 @@ public class AtividadesExtraController {
         this.atividadesExtraService = atividadesExtraService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<AtividadesExtra> getAtividadesExtra(@PathParam("id") Integer id){
-        return ResponseEntity.ok(atividadesExtraService.getAtividadesExtra(id));
-    }
-
-    @GetMapping
-    public ResponseEntity<List<AtividadesExtra>> listAllAtividadesExtra(){
-        return ResponseEntity.ok(atividadesExtraService.listAllAtividadesExtra());
+    @GetMapping("/{cpf}")
+    public ResponseEntity<List<AtividadeExtraResponseDto>> listAllAtividadesExtra(@PathParam("cpf") String cpf){
+        return ResponseEntity.ok(atividadesExtraService.listAllAtividadesExtra(cpf));
     }
 
     @PostMapping
-    public ResponseEntity<AtividadesExtra> addAtividadesExtra(@RequestBody AtividadesExtra atividadesExtra){
-        return ResponseEntity.ok(atividadesExtraService.addAtividadesExtra(atividadesExtra));
+    public ResponseEntity<AtividadesExtra> addAtividadesExtra(@RequestBody AtividadeExtraRequestDto atividadesExtraDto){
+        return ResponseEntity.ok(atividadesExtraService.addAtividadesExtra(atividadesExtraDto));
     }
 
     @DeleteMapping("/{id}")

@@ -3,8 +3,7 @@ package letscode.projetostreinamento.academiaapp.controller;
 import letscode.projetostreinamento.academiaapp.models.Treino;
 import letscode.projetostreinamento.academiaapp.service.TreinoService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,18 +16,22 @@ public class TreinoController {
         this.treinoService = treinoService;
     }
 
+    @GetMapping("/{id}")
     public ResponseEntity<Treino> getTreino(Integer id){
         return ResponseEntity.ok(treinoService.getTreino(id));
     }
 
+    @GetMapping
     public ResponseEntity<List<Treino>> listAllTreino(){
         return ResponseEntity.ok(treinoService.listAllTreino());
     }
 
-    public ResponseEntity<Treino> addTreino(Treino treino){
+    @PostMapping
+    public ResponseEntity<Treino> addTreino(@RequestBody Treino treino){
         return ResponseEntity.ok(treinoService.addTreino(treino));
     }
 
+    @DeleteMapping
     public void delete(Integer id){
         treinoService.delete(id);
     }

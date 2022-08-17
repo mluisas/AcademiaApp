@@ -16,8 +16,8 @@ public class InstrutorController {
         this.instrutorService = instrutorService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Instrutor> getInstrutor(@RequestBody String cpf){
+    @GetMapping("/{cpf}")
+    public ResponseEntity<Instrutor> getInstrutor(@PathVariable String cpf){
         return ResponseEntity.ok(instrutorService.getInstrutor(cpf));
     }
 
@@ -31,8 +31,8 @@ public class InstrutorController {
         return ResponseEntity.ok(instrutorService.addInstrutor(instrutor));
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@RequestBody String cpf){
+    @DeleteMapping("/{cpf}")
+    public void delete(@PathVariable String cpf){
         instrutorService.delete(cpf);
     }
 }

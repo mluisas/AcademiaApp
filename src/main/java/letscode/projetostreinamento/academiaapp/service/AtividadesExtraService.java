@@ -1,12 +1,13 @@
 package letscode.projetostreinamento.academiaapp.service;
 
+import letscode.projetostreinamento.academiaapp.dto.atividadeExtra.AtividadeExtraRequestDto;
+import letscode.projetostreinamento.academiaapp.dto.atividadeExtra.AtividadeExtraResponseDto;
 import letscode.projetostreinamento.academiaapp.models.AtividadesExtra;
 
 import java.util.List;
 
 public interface AtividadesExtraService {
-    AtividadesExtra getAtividadesExtra(Integer id);
-    List<AtividadesExtra> listAllAtividadesExtra();
-    AtividadesExtra addAtividadesExtra(AtividadesExtra atividadesExtra);
+    List<AtividadeExtraResponseDto> listAllAtividadesExtra(String cpf);
+    AtividadesExtra addAtividadesExtra(AtividadeExtraRequestDto atividadesExtraDto);
     void delete(Integer id);
 }
