@@ -1,14 +1,12 @@
 package letscode.projetostreinamento.academiaapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.Set;
 @Getter
 @Setter
@@ -16,12 +14,23 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 public class Treino {
+
+    @JsonIgnore
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToMany
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "treino")
     private Set<Exercicio> exercicios;
-    @OneToOne
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-    @OneToOne
+
+    @ManyToOne
+    @JoinColumn(name = "instrutor_id")
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "instrutor_id", referencedColumnName = "cpf")
     private Instrutor instrutor;
 }
