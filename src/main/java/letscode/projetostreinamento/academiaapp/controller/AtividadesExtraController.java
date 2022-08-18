@@ -4,6 +4,7 @@ import letscode.projetostreinamento.academiaapp.dto.atividadeExtra.AtividadeExtr
 import letscode.projetostreinamento.academiaapp.dto.atividadeExtra.AtividadeExtraResponseDto;
 import letscode.projetostreinamento.academiaapp.models.AtividadesExtra;
 import letscode.projetostreinamento.academiaapp.service.AtividadesExtraService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

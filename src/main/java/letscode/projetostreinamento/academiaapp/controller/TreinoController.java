@@ -1,10 +1,13 @@
 package letscode.projetostreinamento.academiaapp.controller;
 
+import letscode.projetostreinamento.academiaapp.dto.treino.TreinoRequestDto;
+import letscode.projetostreinamento.academiaapp.dto.treino.TreinoResponseDto;
 import letscode.projetostreinamento.academiaapp.models.Treino;
 import letscode.projetostreinamento.academiaapp.service.TreinoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -17,22 +20,22 @@ public class TreinoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Treino> getTreino(Integer id){
+    public ResponseEntity<Treino> getTreino(@PathParam("id") Integer id){
         return ResponseEntity.ok(treinoService.getTreino(id));
     }
 
-    @GetMapping
-    public ResponseEntity<List<Treino>> listAllTreino(){
-        return ResponseEntity.ok(treinoService.listAllTreino());
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<List<TreinoResponseDto>> listAllTreino(@PathParam("cpf") String cpf){
+        return ResponseEntity.ok(treinoService.listAllTreino(cpf));
     }
 
     @PostMapping
-    public ResponseEntity<Treino> addTreino(@RequestBody Treino treino){
-        return ResponseEntity.ok(treinoService.addTreino(treino));
+    public ResponseEntity<TreinoResponseDto> addTreino(@RequestBody TreinoRequestDto treinoRequestDto){
+        return ResponseEntity.ok(treinoService.addTreino(treinoRequestDto));
     }
 
-    @DeleteMapping
-    public void delete(Integer id){
+    @DeleteMapping("/{id}")
+    public void delete(@PathParam("id") Integer id){
         treinoService.delete(id);
     }
 }
