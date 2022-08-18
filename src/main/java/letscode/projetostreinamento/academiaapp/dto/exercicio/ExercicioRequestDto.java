@@ -10,4 +10,5 @@ public class ExercicioRequestDto {
     private String nome;
     private String urlVideoDemonstracao;
     private Integer treinoId;
+
 }

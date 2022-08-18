@@ -15,8 +15,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Entity
 public class Exercicio implements Serializable {
-
-    @JsonIgnore
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,6 +23,7 @@ public class Exercicio implements Serializable {
     private String nome;
     private String urlVideoDemonstracao;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "treino_id")
     private Treino treino;

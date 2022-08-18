@@ -1,5 +1,7 @@
 package letscode.projetostreinamento.academiaapp.service;
 
+import letscode.projetostreinamento.academiaapp.dto.exercicio.ExercicioRequestDto;
+import letscode.projetostreinamento.academiaapp.dto.exercicio.ExercicioResponseDto;
 import letscode.projetostreinamento.academiaapp.models.Exercicio;
 
 import java.util.List;
@@ -7,6 +9,6 @@ import java.util.List;
 public interface ExercicioService {
     Exercicio getExercicio(Integer id);
     List<Exercicio> listAllExercicio();
-    Exercicio addExercicio(Exercicio exercicio);
+    ExercicioResponseDto addExercicio(ExercicioRequestDto exercicioRequestDto);
     void delete(Integer id);
 }
