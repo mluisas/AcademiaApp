@@ -31,12 +31,13 @@ public class InstrutorServiceImpl implements InstrutorService {
     }
 
     @Override
+    @CacheEvict(value = "instrutores", allEntries = true)
     public Instrutor addInstrutor(Instrutor instrutor) {
         return this.instrutorRepository.save(instrutor);
     }
 
     @Override
-    @CacheEvict
+    @CacheEvict(value = "instrutores", allEntries = true)
     public void delete(String cpf) {
         this.instrutorRepository.deleteById(cpf);
     }

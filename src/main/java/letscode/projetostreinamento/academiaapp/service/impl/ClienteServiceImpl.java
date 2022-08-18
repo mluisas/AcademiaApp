@@ -5,7 +5,6 @@ import letscode.projetostreinamento.academiaapp.repository.ClienteRepository;
 import letscode.projetostreinamento.academiaapp.service.ClienteService;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +31,13 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
+    @CacheEvict(value = "clientes", allEntries = true)
     public Cliente addCliente(Cliente cliente){
         return clienteRepository.save(cliente);
     }
 
     @Override
-    @CacheEvict
+    @CacheEvict(value = "clientes", allEntries = true)
     public void delete(String cpf) {
         clienteRepository.deleteById(cpf);
     }
