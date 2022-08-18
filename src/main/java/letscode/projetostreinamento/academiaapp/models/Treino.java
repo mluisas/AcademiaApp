@@ -21,7 +21,6 @@ public class Treino implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "treino")
     private Set<Exercicio> exercicios;
 
@@ -31,7 +30,5 @@ public class Treino implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "instrutor_id")
-    //@OneToOne(cascade = CascadeType.ALL)
-    //@JoinColumn(name = "instrutor_id", referencedColumnName = "cpf")
     private Instrutor instrutor;
 }
